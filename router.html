@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li><a href="#/index">index</a></li>
+    <li><a href="#/news">news</a></li>
+    <li><a href="#/about">about</a></li>
+</ul>
+<router-view></router-view>
+<script src="js/myRouter.js"></script>
+<script>
+    var router = new Router({
+        routes: [
+            {path: '/', component: {template: '<div>index</div>'}},
+            {path: '/index', component: {template: '<div>index</div>'}},
+            {path: '/news', component: {template: '<div>news</div>'}},
+            {path: '/about', component: {template: '<div>about</div>'}}
+        ]
+    })
+
+</script>
+</body>
+</html>

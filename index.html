@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <!--<label class="" style="cursor:default">label</label>-->
+    <div>text:{{name}}</div>
+    <div>no change</div>
+    <br>
+    <input type="text" v-model="title">
+    <br>
+    <textarea v-model="title"></textarea>
+    <div>
+        <span>{{title}}</span>
+    </div>
+    <br>
+    <div>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <span>checked:{{checked}}</span>
+        <div v-if="checked">
+            this is v-if
+        </div>
+    </div>
+    <br>
+    <button v-on:click='test'>click</button>
+    <div>click time :{{num}}</div>
+    <br>
+    <div>{{person.name}}</div>
+
+</div>
+<script src="js/compile.js"></script>
+<script src="js/selfVue.js"></script>
+<script>
+    var selfVue = new SelfVue({
+        el: '#app',
+        data: {
+            title: 'hello world',
+            name: 'duyu',
+            num: 0,
+            checked: true,
+            picked: '',
+            person: {
+                name: 'du',
+                age: '18'
+            }
+        },
+        methods: {
+            test: function () {
+//                this.name = 'hhhhhhh';
+                console.log(this.num++);
+            }
+        },
+        mounted: function () {
+            this.test();
+        }
+    });
+    //    window.setTimeout(function () {
+    //        selfVue.title = '你好';
+    //    }, 2000);
+    //
+    //    window.setTimeout(function () {
+    //        selfVue.name = 'hahah';
+    //    }, 2500);
+
+</script>
+</body>
+</html>
