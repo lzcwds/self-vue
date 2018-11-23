@@ -2,8 +2,8 @@
  * Created by dy on 2018/11/13.
  *
  */
+//dom ====>vdom
 function getElement(dom) {
-	console.dir(dom);
 	let children = [],props ={};
 	if(dom.children.length==0){
 		children.push(dom.innerHTML);
@@ -17,9 +17,7 @@ function getElement(dom) {
 			props[item.name] = item.nodeValue;
 		})
 	}
-
-	var ele =new Element({tagName:dom.localName,props:props, children:children});
-	return ele;
+	return new Element({tagName:dom.localName,props:props, children:children});
 }
 
 
