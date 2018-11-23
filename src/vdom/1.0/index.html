@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul class="list">
+        <li>item1</li>
+        <li>item2</li>
+    </ul>
+</div>
+<button id="refresh">refresh</button>
+<script src="element.js"></script>
+<script>
+	var dom = document.querySelector('#app');
+    var elem = getElement(dom);
+    console.log(elem);
+//	var elem = Element({
+//		tagName: 'ul',
+//		props: {'class': 'list'},
+//		children: [
+//			Element({tagName: 'li', children: ['item1']}),
+//			Element({tagName: 'li', children: ['item2']})
+//		]
+//	});
+//	var newElem =  Element({
+//		tagName: 'ul',
+//		props: {'class': 'list'},
+//		children: [
+//			Element({tagName: 'li', children: ['item1']}),
+//			Element({tagName: 'li', children: ['hahaha']}),
+//            Element({tagName: 'li', children: ['hahaha']})
+//		]
+//	});
+//	var $root = document.querySelector('#app');
+//	var $refresh = document.querySelector('#refresh');
+//	updateElement($root, elem);
+//	$refresh.addEventListener('click', () => {
+//		updateElement($root, newElem, elem);
+//	});
+</script>
+</body>
+</html>
